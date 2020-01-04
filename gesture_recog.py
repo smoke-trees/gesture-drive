@@ -12,7 +12,7 @@ Original file is located at
 !mkdir .kaggle
 
 import json
-token = {"username":"lordtt13","key":"2894b36bb67302ce844ba990d4cc4eb7"}
+token = {“username”:”YOUR-USER-NAME”,”key”:”SOME-VERY-LONG-STRING”}
 with open('.kaggle/kaggle.json', 'w') as file:
     json.dump(token, file)
 
@@ -78,10 +78,12 @@ from random import shuffle
 from zipfile import ZipFile
 from PIL import Image
 
+dir = "{/content}/datasets/gti-upm/leapgestrecog/leapgestrecog/"
+
 lookup = dict()
 reverselookup = dict()
 count = 0
-for j in os.listdir('../input/leapgestrecog/leapGestRecog/00/'):
+for j in os.listdir(dir + "00/'):
     if not j.startswith('.'): # If running this code locally, this is to 
                               # ensure you aren't reading in hidden folders
         lookup[j] = count
@@ -94,13 +96,12 @@ y_data = []
 IMG_SIZE = 150
 datacount = 0 # We'll use this to tally how many images are in our dataset
 for i in range(0, 10): # Loop over the ten top-level folders
-    for j in os.listdir('../input/leapgestrecog/leapGestRecog/0' + str(i) + '/'):
+    for j in os.listdir(dir + '0' + str(i) + '/'):
         if not j.startswith('.'): # Again avoid hidden folders
             count = 0 # To tally images of a given gesture
-            for k in os.listdir('../input/leapgestrecog/leapGestRecog/0' + 
-                                str(i) + '/' + j + '/'):
+            for k in os.listdir(dir + '0' + str(i) + '/' + j + '/'):
                                 # Loop over the images
-                path = '../input/leapgestrecog/leapGestRecog/0' + str(i) + '/' + j + '/' + k
+                path = dir + '0' + str(i) + '/' + j + '/' + k
                 img = cv2.imread(path,cv2.IMREAD_GRAYSCALE)
                 img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
                 arr = np.array(img)
