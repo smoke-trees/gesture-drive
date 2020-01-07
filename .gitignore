@@ -1,0 +1,9 @@
+# Dataset Skipping
+/Gesture Recognition/leapGestRecog
+
+# Logs skipped
+/Gesture Recognition/logs
+*.logs
+
+# Model Skipped
+*.model 
