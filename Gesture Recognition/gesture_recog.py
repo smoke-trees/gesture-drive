@@ -4,58 +4,40 @@ import warnings
 warnings.filterwarnings('always')
 warnings.filterwarnings('ignore')
 
-# data visualisation and manipulation
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import style
 import seaborn as sns
  
-#configure
+# configure
 # sets matplotlib to inline and displays graphs below the corressponding cell.
 # %matplotlib inline  
 style.use('fivethirtyeight')
 sns.set(style='whitegrid',color_codes=True)
 
-#model selection
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import KFold
-from sklearn.metrics import accuracy_score,precision_score,recall_score,confusion_matrix,roc_curve,roc_auc_score
-from sklearn.model_selection import GridSearchCV
-from sklearn.preprocessing import LabelEncoder
 
-#preprocess.
-from keras.preprocessing.image import ImageDataGenerator
-
-#dl libraraies
-from keras import backend as K
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.optimizers import Adam,SGD,Adagrad,Adadelta,RMSprop
+from keras.optimizers import Adam
 from keras.utils import to_categorical
-from keras.callbacks import ModelCheckpoint,EarlyStopping,TensorBoard,CSVLogger,ReduceLROnPlateau,LearningRateScheduler
+from keras.callbacks import ModelCheckpoint,EarlyStopping,TensorBoard,CSVLogger,ReduceLROnPlateau
 
 # specifically for cnn
-from keras.layers import Dropout, Flatten,Activation
-from keras.layers import Conv2D, MaxPooling2D, BatchNormalization,GlobalAveragePooling2D
-import tensorflow as tf
+from keras.layers import Flatten,Activation
+from keras.layers import Conv2D, MaxPooling2D
 import random as rn
 
-# specifically for manipulating zipped images and getting numpy arrays of pixel values of images.
 import cv2                  
-import numpy as np  
-from tqdm import tqdm
 import os                   
-from random import shuffle  
-from zipfile import ZipFile
-from PIL import Image
+
 
 dir = "{/content}/datasets/gti-upm/leapgestrecog/leapgestrecog/"
 
 lookup = dict()
 reverselookup = dict()
 count = 0
-for j in os.listdir(dir + "00/'):
+for j in os.listdir(dir + '00/'):
     if not j.startswith('.'): # If running this code locally, this is to 
                               # ensure you aren't reading in hidden folders
         lookup[j] = count
