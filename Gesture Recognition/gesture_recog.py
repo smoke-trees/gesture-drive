@@ -32,7 +32,7 @@ import cv2
 import os                   
 
 
-dir = "{/content}/datasets/gti-upm/leapgestrecog/leapgestrecog/"
+dir = "./leapgestrecog/"
 
 lookup = dict()
 reverselookup = dict()
