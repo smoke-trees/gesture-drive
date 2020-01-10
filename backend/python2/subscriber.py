@@ -3,7 +3,7 @@
 import paho.mqtt.client as mqtt
 
 
-def on_connect(client, user_data, flags, rc): # Method Execute when a client is connected to the server
+def on_connect(client, user_data, flags, rc):  # Method Execute when a client is connected to the server
     print "Connected to the MQTT Server"
     client.subscribe("merce")
 

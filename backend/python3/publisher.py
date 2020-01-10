@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     signal.signal(signal.SIGINT, shutdown)
 
-    while True:             # Infinite loop for publisher to send data. Model will be called inside this function
+    while True:  # Infinite loop for publisher to send data. Model will be called inside this loop
         client.publish("merce", "hello")
         time.sleep(3)
