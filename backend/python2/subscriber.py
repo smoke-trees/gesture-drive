@@ -3,12 +3,12 @@
 import paho.mqtt.client as mqtt
 
 
-def on_connect(client, user_data, flags, rc):
+def on_connect(client, user_data, flags, rc): # Method Execute when a client is connected to the server
     print "Connected to the MQTT Server"
     client.subscribe("merce")
 
 
-def on_message_receive(client, user_data, msg):
+def on_message_receive(client, user_data, msg):  # Method Executed when a  message is received
     if msg.payload == 'Q':
         client.disconnect()
     else:
