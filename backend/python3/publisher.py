@@ -12,6 +12,7 @@ if __name__ == "__main__":
 
     def shutdown(signal_num, frame):
         print("Shutting down publisher")
+        client.publish("merce", "Q")
         client.disconnect()
         exit()
 
@@ -19,5 +20,5 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, shutdown)
 
     while True:
-        print("hello")
+        client.publish("merce", "hello")
         time.sleep(3)
