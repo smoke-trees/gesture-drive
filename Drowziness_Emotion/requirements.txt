@@ -1,0 +1,6 @@
+numpy==1.17.4
+Keras==2.2.2
+pandas==0.25.3
+scipy==1.3.2
+dlib==19.19.0
+imutils==0.5.3
