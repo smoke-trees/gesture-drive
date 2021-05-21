@@ -1,6 +1,6 @@
 seaborn==0.9.0
 matplotlib==3.1.1
-tensorflow==2.0.3
+tensorflow==2.5.0
 numpy==1.17.4
 Keras==2.2.2
 ipython==7.11.1
