@@ -3,5 +3,5 @@ matplotlib==3.1.1
 tensorflow==2.0.3
 numpy==1.17.4
 Keras==2.2.2
-ipython==7.11.1
+ipython==7.16.3
 scikit_learn==0.22.1
